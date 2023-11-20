@@ -1,0 +1,9 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: rootadmin
+    url: jdbc:mysql://localhost:3306/supermarketdb
+    username: root
