@@ -59,9 +59,7 @@ public class User implements UserDetails {
     private List<UserAddress> addresses;
 
     @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return role.getAuthorities();
-    }
+    public Collection<? extends GrantedAuthority> getAuthorities() {return role.getAuthorities();}
 
     @Override
     public String getPassword() {

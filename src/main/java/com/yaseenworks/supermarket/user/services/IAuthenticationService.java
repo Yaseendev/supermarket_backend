@@ -2,6 +2,7 @@ package com.yaseenworks.supermarket.user.services;
 
 import com.yaseenworks.supermarket.user.models.AuthenticationResponse;
 import com.yaseenworks.supermarket.user.records.AuthenticationRequest;
+import com.yaseenworks.supermarket.user.records.GoogleAuthRequest;
 import com.yaseenworks.supermarket.user.records.RegistrationRequest;
 
 public interface IAuthenticationService {
@@ -10,4 +11,6 @@ public interface IAuthenticationService {
      AuthenticationResponse authenticate(AuthenticationRequest request);
 
     AuthenticationResponse tokenCheck(String bearerToken);
+
+    AuthenticationResponse googleAuthenticate(GoogleAuthRequest request);
 }

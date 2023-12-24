@@ -2,6 +2,7 @@ package com.yaseenworks.supermarket.user.controllers;
 
 import com.yaseenworks.supermarket.user.models.AuthenticationResponse;
 import com.yaseenworks.supermarket.user.records.AuthenticationRequest;
+import com.yaseenworks.supermarket.user.records.GoogleAuthRequest;
 import com.yaseenworks.supermarket.user.records.RegistrationRequest;
 import com.yaseenworks.supermarket.user.services.AuthenticationService;
 import jakarta.validation.Valid;
@@ -29,6 +30,13 @@ public class AuthenticationController {
             @RequestBody @Valid AuthenticationRequest request
     ) {
         return ResponseEntity.ok(authService.authenticate(request));
+    }
+
+    @PostMapping("/google")
+    public ResponseEntity<AuthenticationResponse> googleRegister(
+            @RequestBody @Valid GoogleAuthRequest request
+    ) {
+        return ResponseEntity.ok(authService.googleAuthenticate(request));
     }
 
     @PostMapping("/token-check")

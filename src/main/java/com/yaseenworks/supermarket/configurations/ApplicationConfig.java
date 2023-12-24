@@ -1,6 +1,7 @@
 package com.yaseenworks.supermarket.configurations;
 
 import com.yaseenworks.supermarket.user.repositories.UserRepository;
+import io.github.cdimascio.dotenv.Dotenv;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -49,5 +50,10 @@ public class ApplicationConfig {
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
         return config.getAuthenticationManager();
+    }
+
+    @Bean
+    public Dotenv dotenv() {
+        return Dotenv.configure().ignoreIfMissing().load();
     }
 }

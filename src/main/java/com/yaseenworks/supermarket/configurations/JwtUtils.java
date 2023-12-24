@@ -16,7 +16,7 @@ import java.util.function.Function;
 @Component
 public class JwtUtils {
 
-    private static final String JWT_SIGNING_KEY = "6150645267556B58703273357638792F423F4528482B4D6251655468566D5971";
+    private static final String JWT_SIGNING_KEY = "6150645267556B58703273357638792F423F4528482B4D6251655468566D5971"; //TODO Move to .env
 
     private Key getSigninKey() {
         final byte[] keyBytes = Decoders.BASE64.decode(JWT_SIGNING_KEY);
